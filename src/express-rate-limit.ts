@@ -171,4 +171,4 @@ export function RateLimit(options: RateLimitOptions) {
   return rateLimit;
 }
 
-module.exports = RateLimit;
+export default RateLimit;

@@ -17,3 +17,4 @@ export declare function RateLimit(options: RateLimitOptions): {
     resetKey: (key: string) => void;
     resetIp: (key: string) => void;
 };
+export default RateLimit;
