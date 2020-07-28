@@ -10,7 +10,7 @@ export class MemoryStore {
 
   constructor(public windowMs: number) {
     this.resetTime = calculateNextResetTime(windowMs);
-    const interval = setInterval(this.resetAll, windowMs);
+    const interval = setInterval(this.resetAll.bind(this), windowMs);
     if (interval.unref) {
       interval.unref();
     }
@@ -32,6 +32,7 @@ export class MemoryStore {
   }
 
   resetAll() {
+    console.log('reseting');
     this.hits = {};
     this.resetTime = calculateNextResetTime(this.windowMs);
   }
